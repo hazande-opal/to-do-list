@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body>
+    <section class="bg-blue-950 w-full min-h-dvh text-white p-5">
+        <h1 class="text-xlg font-mono mx-auto js-todo-author">To Do List</h1>
+        <div class="flex w-full sm:w-96 h-10 items-center pl-1 border mx-auto mt-6 font-mono">
+            <div class="w-28 text-sm">To do List by?</div><input class="flex-1 h-full p-2 text-black text-sm outline-none js-todo-list-author-input" type="text" placeholder="Enter Name">
+        </div>
+        <div class="text-black font-mono flex w-full sm:w-116 h-10 justify-between mt-7 mx-auto border">
+            <input class="px-1 text-sm outline-none js-to-do" type="text" placeholder="To-do">
+            <input class="px-1 text-sm outline-none cursor-pointer js-todo-date" type="date">
+            <button class="w-24 bg-green-200 text-sm js-add-todo-button">Add To-Do</button>
+        </div>
+        <div class="mt-10 flex justify-center items-centermx-auto">
+            <ul class="flex flex-col gap-5 js-todo-list" >
+               
+            </ul>
+        </div>
+    </section>
+
+<script src="scripts/script.js"></script> 
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
