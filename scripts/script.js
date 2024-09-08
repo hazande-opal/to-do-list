@@ -4,38 +4,45 @@ const addToDoButton = document.querySelector('.js-add-todo-button');
 const listAuthor = document.querySelector('.js-todo-list-author-input')
 
 
-// const authors = JSON.parse(localStorage.getItem('author')) || ['Stranger'];
-
-// listAuthor.addEventListener('keydown', (event) => {
-//     if(event.key === 'Enter'){
-//         const newListAuthor = listAuthor.value;
-//         const authorNameSplit = newListAuthor.split(" ");
-//         const firstName = authorNameSplit[0];
-
-//         authors.push(firstName);
-//         console.log(authors);
-
-//         let authorHTML = '';
-//         authors.forEach((author) => {
-//             authorHTML += `${authors[0]}'s To Do List`;
-//         })
-
-//         // updateTheLocalStorage('author', authors);
-
-
-//         document.querySelector('.js-todo-author').innerHTML = authorHTML;
-        
-//         listAuthor.value = '';
-//     }
-
-// })
-
-
+const authors = JSON.parse(localStorage.getItem('author')) || ['Guest'];
 
 const toDoLists = JSON.parse(localStorage.getItem('lists')) || [{
     todo : "My first todo List",
     date : "01/01/0001"
 }];
+
+console.log(localStorage);
+
+function renderAuthorList(){
+    let authorHTML = '';
+    authors.forEach((author) => {
+        authorHTML += `${authors[0]}'s To Do List`;
+        
+    })
+    document.querySelector('.js-todo-author').innerHTML = authorHTML;
+}
+
+renderAuthorList();
+
+listAuthor.addEventListener('keydown', (event) => {
+    if(event.key === 'Enter'){
+        const newListAuthor = listAuthor.value;
+        const authorNameSplit = newListAuthor.split(" ");
+        const firstName = authorNameSplit[0];
+
+        authors.push(firstName);
+        authors.splice(0,1);
+        console.log(authors);
+        
+        updateTheLocalStorage('author', authors);
+
+        renderAuthorList();
+
+        listAuthor.value = '';
+    }
+
+})
+
 
 function renderToDoList(){
     let html = '';
@@ -87,6 +94,8 @@ addToDoButton.addEventListener('click', () => {
 function updateTheLocalStorage(storeComaprtment, itemToStore){
     localStorage.setItem(storeComaprtment, JSON.stringify(itemToStore))
 }
+
+
 
 
 
