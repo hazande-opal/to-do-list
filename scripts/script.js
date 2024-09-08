@@ -48,7 +48,8 @@ function renderToDoList(){
 
     for(let i = 0; i < toDoLists.length; i++){
         const toDoList = toDoLists[i];
-        html += `<li class="h-10">
+        html += `
+        <li class="container">
             <div class=" h-full flex text-sm font-mono justify-between border">
                 <div class="p-2">${toDoList.todo}</div>
                 <div class="p-2">${toDoList.date}</div>
