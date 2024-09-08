@@ -11,7 +11,6 @@ const toDoLists = JSON.parse(localStorage.getItem('lists')) || [{
     date : "01/01/0001"
 }];
 
-console.log(localStorage);
 
 function renderAuthorList(){
     let authorHTML = '';
